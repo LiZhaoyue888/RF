@@ -2,21 +2,18 @@
 近年来无人机运货，安防，监控逐渐兴起。无人机大多采用LTE,NR进行通讯，如何测试远程无人机在飞行线路上的信号质量成了问题。
 Rohde&Schwarz公司将R&S RF扫频仪器和一部QualiPoc手机加装到无人机上飞行测试，同时记录数据，回头分析。
 
-## 记录内容包括
+## 测量参数包括
 
--DL EARFCN...=1300 ：下行E-UTRA绝对无线频率信道号
--PCI(PCC) = 338 ：物理小区标识
--RSRP(PCC) = -95.6dBm ：参考信号接收功率
--RSRQ(PCC)= -7.0dB : 参考信号接收质量
--PCI(PCC)=338 ：主小区号0-503
--PCI(SCC-1)=394 : 辅小区号
--PCI(SCC-2)=338 : 辅小区号
----------------------------
-Bandwidth(PCC) = 20MHz 主载波带宽，承担控制信号
-Bandwidth(SCC-1) = 20MHz 辅载波，与主载波聚合传输
-Tx Antennas(PCC) -96.0dBm 主传输天线信号强度
-Tx Antennas(SCC-1) -97.0dBm 辅传输天线信号强度
-RSRP(PCC) = -96.0dBm 参考信号的强度
-RSRQ(PCC) = -6.3dB 参考信号质量
----------------------------
-**RSRP(PCC) -96.0dBm (-140...-30)** 信号一般
+- DL EARFCN = 1300 ：下行E-UTRA绝对无线频率信道号
+- PCI(PCC) = 338 ：物理小区标识
+- RSRP(PCC) = -95.6dBm ：**参考信号接收功率**
+- RSRQ(PCC)= -7.0dB : 参考信号接收质量 
+- PCI(PCC)=338 ：主小区号0-503
+- PCI(SCC-1)=394 : 辅小区号
+- PCI(SCC-2)=338 : 辅小区号
+- Bandwidth(PCC) = 20MHz 主载波带宽，承担控制信号
+- Bandwidth(SCC-1) = 20MHz 辅载波，与主载波聚合传输
+- Tx Antennas(PCC) -96.0dBm 主传输天线信号强度
+- Tx Antennas(SCC-1) -97.0dBm 辅传输天线信号强度
+- RSRP(PCC) = -96.0dBm 参考信号的强度
+- RSRQ(PCC) = -6.3dB 参考信号质量
