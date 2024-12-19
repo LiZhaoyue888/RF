@@ -6,7 +6,7 @@ Rohde&Schwarz公司将R&S RF扫频仪器和一部QualiPoc手机加装到无人�
 
 - DL EARFCN = 1300 ：下行E-UTRA绝对无线频率信道号
 - PCI(PCC) = 338 ：物理小区标识
-- RSRP(PCC) = -95.6dBm ：**参考信号接收功率**
+- **RSRP(PCC) = -95.6dBm ：参考信号接收功率**
 - RSRQ(PCC)= -7.0dB : 参考信号接收质量 
 - PCI(PCC)=338 ：主小区号0-503
 - PCI(SCC-1)=394 : 辅小区号
