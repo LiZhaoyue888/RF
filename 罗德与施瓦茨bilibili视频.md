@@ -17,3 +17,4 @@ Rohde&Schwarz公司将R&S RF扫频仪器和一部QualiPoc手机（经过改装�
 - Tx Antennas(SCC-1) -97.0dBm 辅传输天线信号强度
 - RSRP(PCC) = -96.0dBm 参考信号的强度
 - RSRQ(PCC) = -6.3dB 参考信号质量
+- SINR = 5dB 信噪比(参考信号/噪声)
