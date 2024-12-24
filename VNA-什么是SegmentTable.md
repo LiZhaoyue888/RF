@@ -1,6 +1,6 @@
 # 什么是分段扫描，如何引入分段扫描，引入后对现有系统有何影响，具体要做哪些工作？
 
-Segment Sweep：分段配置,整体扫描
+Segment Sweep：分段配置频点，合并下发配置，整体进行扫描
 现有配置方式：一次配置，重复扫描
 ```C++
 VNA_ConfigConditionDT(ch,freqArray[],freqCnt,ifbwArray[],bandpowerArray[])
