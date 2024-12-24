@@ -1,4 +1,4 @@
-## 有着几点以前不知道
+## QTableWidget有几个以前不知道的实用知识点
 - 如何设置表头
   ```c++
     QStringList headerLabels;
