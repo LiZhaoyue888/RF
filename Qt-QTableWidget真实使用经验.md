@@ -5,10 +5,10 @@
     headerLabels << "State" << "Start" << "Stop" << "Points" << "IFBW";
     setHorizontalHeaderLabels(headerLabels);
   ```
-- 表格可以规定一次编辑几个单元格
+- 规定一次只能选中一个单元格
   ```c++
-    setSelectionMode(QAbstractItemView::SingleSelection);
-    setSelectionBehavior(QAbstractItemView::SelectItems);
+    setSelectionMode(QAbstractItemView::SingleSelection);//一次只能选中一个单元格
+    setSelectionBehavior(QAbstractItemView::SelectItems);//不能通过点击行列选中单元格
   ```
 - 表格的QTableWidgetItem可以设置为QCheckBox替代setWidget(new QCheckBox) 方法：setFlags
   ```c++
