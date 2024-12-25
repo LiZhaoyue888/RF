@@ -103,7 +103,7 @@ public:
 };
 
 ```
-源文件.cpp代码 重点关注 setModelData()  
+源文件.cpp代码 重点关注 setModelData()  createEditor()
 ```c++
 
 SegmentDelegate::SegmentDelegate(QObject* parent)
@@ -115,6 +115,13 @@ QWidget* SegmentDelegate::createEditor(QWidget* parent,
                                        const QStyleOptionViewItem &option,
                                        const QModelIndex &index) const
 {
+    static QStringList buttonTextList = { "1MHz", "500KHz", "250KHz", "125KHz", "60KHz", "20KHz", "15KHz", "7KHz", "4KHz", "2KHz", "1KHz" };
+    if (index.column() == 4)//ifbw
+    {
+        auto combox = new QComboBox(parent);
+        combox->addItems(buttonTextList);
+        return combox;
+    }
     return QStyledItemDelegate::createEditor(parent, option, index);
 }
 
@@ -165,5 +172,27 @@ SegmentTable::SegmentTable(QWidget* parent /*= nullptr*/)
 
 	SegmentDelegate* delegate = new SegmentDelegate(this);
 	setItemDelegate(delegate);
+}
+```
+### 一个巧妙地Qt设定
+当我用Delegate的createEditor给QTableWidget的某一列editor改为QComboBox时，我只改了editor，没有修改setEditorData和setModelData，神奇的事情发生了。  
+表格中的数据可以根据QComboBox的选择自动更新，我本来还打算往setEditorData中添加代码，所以ChatGPT的愚蠢不能全信，即便是ChatGPT-o1。  
+这个只修改createEditor不修改其他项的神奇之处就在于以下代码，其中关键是：editor->metaObject()->userProperty().name()
+```c++
+void QStyledItemDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
+{
+#ifdef QT_NO_PROPERTIES
+    Q_UNUSED(editor);
+    Q_UNUSED(index);
+#else
+    QVariant v = index.data(Qt::EditRole);
+    QByteArray n = editor->metaObject()->userProperty().name();
+
+    if (!n.isEmpty()) {
+        if (!v.isValid())
+            v = QVariant(editor->property(n).userType(), (const void *)0);
+        editor->setProperty(n, v);
+    }
+#endif
 }
 ```
