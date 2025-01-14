@@ -7,3 +7,11 @@ Qt6抛弃了qmake全面拥抱QML，抛弃了Quick1.0采用Quick2.0
 ## 传闻微信PC端用QT重构了
 
 版本号是Qt5.15.14
+
+## 如何下载Qt5.15.12?
+下载Qt在线安装器，然后打开勾选Archieved，然后重新筛选，就有历史所有版本了
+https://mirror.nju.edu.cn/qt/official_releases/online_installers/
+
+## Qt5.15.12支持
+1、支持win7-32位
+2、同时支持qmake和CMake构建
